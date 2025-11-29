@@ -4,7 +4,7 @@ use IEEE.std_logic_1164.all;
 --
 
 entity dec_5 is port ( Enable: in  std_logic;
-                       Cod:    in  std_logic_vector(0 to 4);
+                       Cod:    in  std_logic_vector(4 downto 0);
                        S:      out std_logic_vector(0 to 31) );
 end dec_5;
 
@@ -13,7 +13,7 @@ end dec_5;
 architecture ar of dec_5 is
 
 component dec_2 is port ( Enable: in  std_logic;
-                          Cod:    in  std_logic_vector(0 to 1);
+                          Cod:    in  std_logic_vector(1 downto 0);
                           S:      out std_logic_vector(0 to 3) );
 end component;
 
