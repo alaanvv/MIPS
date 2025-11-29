@@ -3,20 +3,20 @@ use IEEE.std_logic_1164.all;
 
 --
 
-entity ula_1 is
+entity alu_1 is
     port ( I:      in  std_logic_vector(0 to 1);
            Invert: in  std_logic_vector(0 to 1);
-           Op:     in  std_logic_vector(0 to 1);
+           Op:     in  std_logic_vector(1 downto 0);
            Cin:    in  std_logic;
            Less:   in  std_logic;
            Set:    out std_logic;
            cout:   out std_logic;
            S:      out std_logic );
-end ula_1;
+end alu_1;
 
 ---
 
-architecture ar of ula_1 is
+architecture ar of alu_1 is
 
 component half_adder is
     port ( A, B: in  std_logic; 
