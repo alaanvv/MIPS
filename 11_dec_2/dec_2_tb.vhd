@@ -8,13 +8,13 @@ architecture tb of dec_2_tb is
     component dec_2 is
         port (
             Enable : in  std_logic;
-            Cod    : in  std_logic_vector(0 to 1);
+            Cod    : in  std_logic_vector(1 downto 0);
             S      : out std_logic_vector(0 to 3)
         );
     end component;
 
     signal Enable : std_logic;
-    signal Cod    : std_logic_vector(0 to 1);
+    signal Cod    : std_logic_vector(1 downto 0);
     signal S      : std_logic_vector(0 to 3);
 
 begin
