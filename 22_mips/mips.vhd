@@ -81,7 +81,7 @@ component cu is
 end component;
 
 component alu_cu is
-  port ( Funct:   in  std_logic_vector(0 to 5);
+  port ( Funct:   in  std_logic_vector(5 downto 0);
          ALUOp:   in  std_logic_vector(1 downto 0);
          AInvert: out std_logic;
          BInvert: out std_logic;
@@ -158,7 +158,7 @@ reg_file_inst: reg_file port map ( Clk    => Clk,
                                 AddrW  => WriteReg,
                                 DataW  => WriteData,
                                 AddrR1 => Instruction(25 downto 21),
-                                AddrR2 => WriteReg,
+                                AddrR2 => Instruction(20 downto 16),
                                 DataR1 => ReadData1,
                                 DataR2 => ReadData2 );
 
@@ -167,7 +167,7 @@ mux_alu_src: mux_2x32 port map ( A   => ReadData2,
                                  Sel => ALUSrc,
                                  S   => ALUIn2 );
 
-cu_inst: cu port map ( Opcode   => Instruction(5 downto 0),
+cu_inst: cu port map ( Opcode   => Instruction(31 downto 26),
                      ALUOp    => ALUOp,
                      RegWrite => RegWrite,
                      RegDst   => RegDst,

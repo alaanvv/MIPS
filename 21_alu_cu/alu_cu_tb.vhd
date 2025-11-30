@@ -8,7 +8,7 @@ architecture tb of alu_cu_tb is
 
     component alu_cu is
         port (
-            Funct   : in  std_logic_vector(0 to 5);
+            Funct   : in  std_logic_vector(5 downto 0);
             ALUOp   : in  std_logic_vector(1 downto 0);
             AInvert : out std_logic;
             BInvert : out std_logic;
@@ -16,7 +16,7 @@ architecture tb of alu_cu_tb is
         );
     end component;
 
-    signal Funct   : std_logic_vector(0 to 5);
+    signal Funct   : std_logic_vector(5 downto 0);
     signal ALUOp   : std_logic_vector(1 downto 0);
     signal AInvert : std_logic;
     signal BInvert : std_logic;
