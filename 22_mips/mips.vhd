@@ -237,10 +237,11 @@ mux_branch: mux_2x32 port map ( A   => NextPC,
                                 Sel => ShouldBranch,
                                 S   => MuxedNextPCBranch );
 
-mux_jump: mux_2x32 port map ( A   => MuxedNextPCBranch,
-                              B   => ShiftedJump,
-                              Sel => Jump,
-                              S   => MuxedNextPCBranchJump );
+mux_jump: mux_2x32 port map ( A               => MuxedNextPCBranch,
+                              B(27 downto 0)  => ShiftedJump(27 downto 0),
+                              B(31 downto 28) => NextPC(31 downto 28),
+                              Sel             => Jump,
+                              S               => MuxedNextPCBranchJump );
 
 ShouldBranch <= Branch AND Zero;
 

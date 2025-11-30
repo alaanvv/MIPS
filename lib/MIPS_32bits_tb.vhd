@@ -7,7 +7,7 @@
 -- Module Name:   MIPS_32bits_tb.vhd
 -- Project Name:  mips_digital
 -- 
--- VHDL Test Bench Created by ISE for module: MIPS_32bits
+-- VHDL Test Bench Created by ISE for module: mips
 -- 
 --------------------------------------------------------------------------------
 LIBRARY ieee;
@@ -21,12 +21,12 @@ ARCHITECTURE behavior OF MIPS_32bits_tb IS
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT MIPS_32bits
+    COMPONENT mips
     PORT(
-         DebugEndereco : IN  std_logic_vector(31 downto 0);
-         DebugPalavra : OUT  std_logic_vector(31 downto 0);
          Clock : IN  std_logic;
-         Inicializar : IN  std_logic
+         Inicializar : IN  std_logic;
+         DebugEndereco : IN  std_logic_vector(31 downto 0);
+         DebugPalavra : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
@@ -46,11 +46,11 @@ ARCHITECTURE behavior OF MIPS_32bits_tb IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: MIPS_32bits PORT MAP (
-          DebugEndereco => DebugEndereco,
-          DebugPalavra => DebugPalavra,
+   uut: mips PORT MAP (
           Clock => Clock,
-          Inicializar => Inicializar
+          Inicializar => Inicializar,
+          DebugEndereco => DebugEndereco,
+          DebugPalavra => DebugPalavra
         );
 
    -- Clock process definitions
