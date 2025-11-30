@@ -22,7 +22,7 @@ END COMPONENT;
    signal Inicializar   : std_logic := '0';
    signal DebugPalavra  : std_logic_vector(31 downto 0);
 
-   constant Clock_period : time := 10 ns;
+   constant Clock_period : time := 4 ns;
 
 BEGIN
 uut: mips PORT MAP (
@@ -35,36 +35,25 @@ uut: mips PORT MAP (
 
    stim_proc: process
    begin
-      wait for 100 ns;
-
-      -- pulso
+   
       Clock <= '1'; wait for Clock_period/2;
+   Inicializar <= '1';
+   wait for 1 ns;
+   Inicializar <= '0';
+   wait for 1 ns;
       Clock <= '0'; wait for Clock_period/2;
 
-      Inicializar <= '1';
-      Clock <= '1'; wait for Clock_period/2;
-      Clock <= '0'; wait for Clock_period/2;
-      Clock <= '1'; wait for Clock_period/2;
-      Clock <= '0'; wait for Clock_period/2;
-      Inicializar <= '0';
 
-      for i in 1 to 50 loop
-         Clock <= '1'; wait for Clock_period/2;
-         Clock <= '0'; wait for Clock_period/2;
-         Clock <= '1'; wait for Clock_period/2;
-         Clock <= '0'; wait for Clock_period/2;
-      end loop;
+        		for j in 0 to 9 loop
+                  for i in 0 to 7 loop
+                    Clock <= '0'; wait for Clock_period/2;
+                    Clock <= '1'; wait for Clock_period/2;
+                  end loop;
+				  DebugEndereco <= std_logic_vector(to_unsigned(j*4,32));
+			    end loop;
 
-      for i in 0 to 10 loop
-         DebugEndereco <= std_logic_vector(to_unsigned(i*4, 32));
-         Clock <= '1'; wait for Clock_period/2;
-         Clock <= '0'; wait for Clock_period/2;
-         Clock <= '1'; wait for Clock_period/2;
-         Clock <= '0'; wait for Clock_period/2;
-      end loop;
 
       wait;
    end process;
 
 END;
-

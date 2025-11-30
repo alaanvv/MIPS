@@ -8,7 +8,7 @@ end alu_32_tb;
 architecture sim of alu_32_tb is
 
     component alu_32 is
-      port ( Invert: in  std_logic_vector(1 downto 0);
+      port ( Invert: in  std_logic_vector(0 to 1);
              Op:     in  std_logic_vector(1 downto 0);
              A:      in  std_logic_vector(31 downto 0);
              B:      in  std_logic_vector(31 downto 0);
@@ -16,7 +16,7 @@ architecture sim of alu_32_tb is
              Zero:   out std_logic );
     end component;
 
-    signal Invert : std_logic_vector(1 downto 0);
+    signal Invert : std_logic_vector(0 to 1);
     signal Op     : std_logic_vector(1 downto 0);
     signal A, B   : std_logic_vector(31 downto 0);
     signal S      : std_logic_vector(31 downto 0);
