@@ -30,8 +30,8 @@ begin
 
     stim: process
     begin
-        for i in 0 to 31 loop
-            I(i) <= std_logic_vector(to_unsigned(i, 32));
+        for k in 0 to 31 loop
+            I(k) <= std_logic_vector(to_unsigned(k, 32));
         end loop;
 
         Sel <= "00000"; wait for 10 ns;
