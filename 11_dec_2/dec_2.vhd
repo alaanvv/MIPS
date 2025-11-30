@@ -3,9 +3,10 @@ use IEEE.std_logic_1164.all;
 
 --
 
-entity dec_2 is port ( Enable: in  std_logic;
-                Cod:    in  std_logic_vector(1 downto 0);
-                S:      out std_logic_vector(0 to 3) );
+entity dec_2 is port ( 
+  Enable: in  std_logic;
+  Cod:    in  std_logic_vector(1 downto 0);
+  S:      out std_logic_vector(0 to 3) );
 end dec_2;
 
 ---

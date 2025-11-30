@@ -3,9 +3,9 @@ use IEEE.std_logic_1164.all;
 
 --
 
-entity half_adder is
-    port ( A, B: in  std_logic; 
-           S, C: out std_logic );
+entity half_adder is port ( 
+  A, B: in  std_logic; 
+  S, C: out std_logic );
 end half_adder;
 
 --

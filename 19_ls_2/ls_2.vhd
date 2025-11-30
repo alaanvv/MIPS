@@ -3,9 +3,9 @@ use IEEE.std_logic_1164.all;
 
 --
 
-entity ls_2 is
-  port ( I: in  std_logic_vector(31 downto 0);
-         O: out std_logic_vector(31 downto 0) );
+entity ls_2 is port ( 
+  I: in  std_logic_vector(31 downto 0);
+  O: out std_logic_vector(31 downto 0) );
 end ls_2;
 
 ---

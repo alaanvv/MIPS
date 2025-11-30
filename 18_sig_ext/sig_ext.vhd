@@ -3,9 +3,9 @@ use IEEE.std_logic_1164.all;
 
 --
 
-entity sig_ext is
-  port ( I: in  std_logic_vector(15 downto 0);
-         O: out std_logic_vector(31 downto 0) );
+entity sig_ext is port ( 
+  I: in  std_logic_vector(15 downto 0);
+  O: out std_logic_vector(31 downto 0) );
 end sig_ext;
 
 ---

@@ -3,10 +3,10 @@ use IEEE.std_logic_1164.all;
 
 --
 
-entity mux_2 is
-    port ( I:   in  std_logic_vector(0 to 1);
-           Sel: in  std_logic;
-           S:   out std_logic );
+entity mux_2 is port ( 
+  I:   in  std_logic_vector(0 to 1);
+  Sel: in  std_logic;
+  S:   out std_logic );
 end mux_2;
 
 ---

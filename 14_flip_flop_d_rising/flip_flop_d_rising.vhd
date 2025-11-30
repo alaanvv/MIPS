@@ -3,13 +3,13 @@ use IEEE.std_logic_1164.all;
 
 --
 
-entity flip_flop_d_rising is
-  port ( D:      in  std_logic;
-         Enable: in  std_logic;
-         Preset: in  std_logic;
-         Clear:  in  std_logic;
-         Clk:    in  std_logic;
-         O:      out std_logic );
+entity flip_flop_d_rising is port ( 
+  D:      in  std_logic;
+  Enable: in  std_logic;
+  Preset: in  std_logic;
+  Clear:  in  std_logic;
+  Clk:    in  std_logic;
+  O:      out std_logic );
 end flip_flop_d_rising;
 
 ---

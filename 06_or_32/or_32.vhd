@@ -3,9 +3,9 @@ use IEEE.std_logic_1164.all;
 
 --
 
-entity or_32 is
-  port ( Input: in  std_logic_vector(0 to 31);
-         O:     out std_logic );
+entity or_32 is port ( 
+  Input: in  std_logic_vector(0 to 31);
+  O:     out std_logic );
 end or_32;
 
 ---

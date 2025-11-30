@@ -3,17 +3,17 @@ use IEEE.std_logic_1164.all;
 
 --
 
-entity cu is
-  port ( Opcode:   in  std_logic_vector(0 to 5);
-         ALUOp:    out std_logic_vector(1 downto 0);
-         RegWrite: out std_logic;
-         RegDst:   out std_logic;
-         ALUSrc:   out std_logic;
-         Branch:   out std_logic;
-         MemWrite: out std_logic;
-         MemToReg: out std_logic;
-         Jump:     out std_logic;
-         MemRead:  out std_logic );
+entity cu is port (
+  Opcode:   in  std_logic_vector(0 to 5);
+  ALUOp:    out std_logic_vector(1 downto 0);
+  RegWrite: out std_logic;
+  RegDst:   out std_logic;
+  ALUSrc:   out std_logic;
+  Branch:   out std_logic;
+  MemWrite: out std_logic;
+  MemToReg: out std_logic;
+  Jump:     out std_logic;
+  MemRead:  out std_logic );
 end cu;
 
 ---

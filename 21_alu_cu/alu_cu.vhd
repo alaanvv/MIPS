@@ -3,12 +3,12 @@ use IEEE.std_logic_1164.all;
 
 --
 
-entity alu_cu is
-  port ( Funct:   in  std_logic_vector(5 downto 0);
-         ALUOp:   in  std_logic_vector(1 downto 0);
-         AInvert: out std_logic;
-         BInvert: out std_logic;
-         Op:      out std_logic_vector(1 downto 0) );
+entity alu_cu is port ( 
+  Funct:   in  std_logic_vector(5 downto 0);
+  ALUOp:   in  std_logic_vector(1 downto 0);
+  AInvert: out std_logic;
+  BInvert: out std_logic;
+  Op:      out std_logic_vector(1 downto 0) );
 end alu_cu;
 
 ---
