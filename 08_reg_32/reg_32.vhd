@@ -22,7 +22,8 @@ component flip_flop_d is port (
   Preset: in  std_logic; 
   Clear:  in  std_logic; 
   Clk:    in  std_logic; 
-  O:      out std_logic );
+  O:      out std_logic;
+  NotO:   out std_logic );
 end component;
 
 begin
@@ -35,7 +36,8 @@ flip_flop_d_n: flip_flop_d port map (
   Preset => Preset,
   Clear  => Clear,
   Clk    => Clk,
-  O      => O(i) );
+  O      => O(i),
+  NotO   => open );
 
 end generate gen;
 

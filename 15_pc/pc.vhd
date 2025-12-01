@@ -20,7 +20,8 @@ component flip_flop_d_rising is port (
   Preset: in  std_logic; 
   Clear:  in  std_logic; 
   Clk:    in  std_logic; 
-  O:      out std_logic );
+  O:      out std_logic;
+  NotO:   out std_logic );
 end component;
 
 signal sPresets: std_logic_vector(31 downto 0);
@@ -53,7 +54,8 @@ flip_flop_d_rising_n: flip_flop_d_rising port map (
   Preset => sPresets(k), 
   Clear  => sClears(k), 
   Clk    => Clk, 
-  O      => O(k) );
+  O      => O(k),
+  NotO   => open );
 
 end generate gen;
 

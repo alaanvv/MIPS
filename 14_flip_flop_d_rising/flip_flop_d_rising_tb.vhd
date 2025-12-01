@@ -13,11 +13,12 @@ architecture sim of flip_flop_d_rising_tb is
             Preset : in  std_logic;
             Clear  : in  std_logic;
             Clk    : in  std_logic;
-            O      : out std_logic
+            O      : out std_logic;
+            NotO   : out std_logic
         );
     end component;
 
-    signal D, Enable, Preset, Clear, Clk, O : std_logic := '0';
+    signal D, Enable, Preset, Clear, Clk, O, NotO : std_logic := '0';
 
 begin
 
@@ -28,7 +29,8 @@ begin
             Preset => Preset,
             Clear  => Clear,
             Clk    => Clk,
-            O      => O
+            O      => O,
+            NotO   => NotO
         );
 
     stim: process

@@ -9,7 +9,8 @@ entity flip_flop_d_rising is port (
   Preset: in  std_logic;
   Clear:  in  std_logic;
   Clk:    in  std_logic;
-  O:      out std_logic );
+  O:      out std_logic;
+  NotO:   out std_logic );
 end flip_flop_d_rising;
 
 ---
@@ -29,5 +30,7 @@ elsif rising_edge(Clk) AND Enable = '1' then
 end if;
 
 end process;
+
+NotO <= NOT O;
 
 end architecture ar;
