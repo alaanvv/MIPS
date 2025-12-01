@@ -35,7 +35,6 @@ begin
 
     stim: process
     begin
-        -- clk manual
         Clk <= '0'; wait for 10 ns;
         Clk <= '1'; wait for 10 ns;
 
@@ -43,18 +42,13 @@ begin
         Clk <= '0'; wait for 10 ns;
         Clk <= '1'; wait for 10 ns;
 
-        D <= '0';
+        Enable <= '0'; D <= '0';
         Clk <= '0'; wait for 10 ns;
         Clk <= '1'; wait for 10 ns;
 
-        Preset <= '1';
         wait for 10 ns;
-        Preset <= '0';
-
         Clear <= '1';
         wait for 10 ns;
-        Clear <= '0';
-
         wait;
     end process;
 
