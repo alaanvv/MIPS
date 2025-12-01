@@ -43,23 +43,24 @@ begin
 
     stim: process
     begin
-        I      <= "11";
-        Invert <= "01";
+        I      <= "01";
+
+        Invert <= "00";
         Cin    <= '0';
         Less   <= '0';
 
+        Op <= "10"; wait for 20 ns; -- SOMA
         Op <= "00"; wait for 20 ns; -- AND
         Op <= "01"; wait for 20 ns; -- OR
-        Op <= "10"; wait for 20 ns; -- SOMA
+
+        Invert <= "11";
+        Op <= "01"; wait for 20 ns; -- NAND
+        Op <= "00"; wait for 20 ns; -- NOR
+
+        Invert <= "01";
+        Cin    <= '1';
+        Op <= "10"; wait for 20 ns; -- SUBTRACAO
         Op <= "11"; wait for 20 ns; -- LESS
-
-        I      <= "01"; wait for 20 ns;
-        I      <= "10"; wait for 20 ns;
-        I      <= "11"; wait for 20 ns;
-
-        Invert <= "10"; Cin <= '1'; Op <= "10"; wait for 20 ns; -- SUB
-
-        Less <= '1'; Op <= "11"; wait for 20 ns;
 
         wait;
     end process;
